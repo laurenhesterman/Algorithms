@@ -1,0 +1,19 @@
+
+
+function fact (num){
+
+    var tor=1;
+    while (n>0)
+
+{
+tor =tor*num;
+
+num--
+}
+return tor;
+
+
+
+
+}
+console.log(tor);

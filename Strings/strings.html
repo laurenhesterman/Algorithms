@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function strToArr(str, del=" ", punch=false) {
+        var relArray = [];
+        var temp = "";
+
+        for (var i = 0; i < str.length; i++) {
+            if(str[i] == del) {
+                if (temp.length > 0){
+                    relArray.push(temp);
+                    temp = "";
+                }
+
+            }
+            if (punch) {
+                if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+                    temp = temp + str[i];
+                }
+            }
+            else {temp = temp + str[i]}
+        
+        }
+        if (temp.length > 0 ) {
+            relArray.push(temp);
+        }
+        
+        return relArray;
+
+}
+
+//  console.log(strToArr("The quick brown fox jumped!"))
+ console.log(strToArr("The quick brown fox jumped!", " ", true))
+
+
+function longest(str){
+    arrstr = strToArr(str, " ", true);
+    max = arrstr[0];
+    console.log(max)
+    console.log(arrstr)
+    for (var i = 1; i < str.length; i++) {
+         console.log(arrstr[i].length)
+        if (arrstr[i].length > max.length){
+            max = arrstr[i]; 
+            }
+        } 
+        return max;
+    }
+
+console.log(longest("The quick brown fox jumped extremely high"))
+   
+
+    
+    
+    </script>
+</head>
+<body>
+    test
+</body>
+</html>
