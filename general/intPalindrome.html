@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function isPalindrome(int){
+
+        var num = 1;
+        var arr = [];
+        while (num<=int){
+            num *= 10;
+        }
+        num /= 10
+        console.log(int)
+        while (int>=1){
+            if (int>=10){
+                console.log(int-(int%num)/num)
+                arr.push(int-(int%num)/num)
+
+            }
+            else { 
+                arr.push(int) }
+            int = int%num
+            num /= 10
+            // console.log(int)
+        }
+        console.log(arr)
+        for (var idx = 0; idx<arr.length; idx++){
+            var back = arr.length - (idx+1)
+            if (arr[idx] != arr[back]){
+                return false;
+            }
+            else if( idx == back || (idx+1) == back){
+                break
+            }
+        }
+        return true;
+
+    }
+
+console.log(isPalindrome(46564))
+
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
