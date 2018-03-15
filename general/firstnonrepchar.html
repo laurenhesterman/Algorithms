@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function firstNonRepeatChar(str){
+  var len = str.length,
+      char, 
+      charCount = {};
+  for(var i =0; i<len; i++){
+    char = str[i];
+    if(charCount[char]){
+      charCount[char]++;
+    }
+    else
+      charCount[char] = 1;
+  }
+  for (var j in charCount){
+    if (charCount[j]==1)
+       return j;
+  }
+}  
+
+firstNonRepeatChar('the quick brown fox jumps then quickly blow air');
+//  = "f"
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
