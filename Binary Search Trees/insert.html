@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        
+  exports.Node = function (value, left, right, parent) {
+    /**
+     * @member {Number|String}
+     */
+    this.value = value;
+    this._left = left;
+    this._right = right;
+    this._parent = parent;
+  };
+
+  /**
+   * Binary tree.
+   *
+   * @public
+   * @constructor
+   */
+  exports.BinaryTree = function () {
+    this._root = null;
+  };
+  //begin algo
+  exports.BinaryTree.prototype.insert = function (value, current) {
+    if (this._root === null) {
+      this._root = new exports.Node(value, null, null, null);
+      return;
+    }
+    var insertKey;
+    current = current || this._root;
+    if (current.value > value) {
+      insertKey = '_left';
+    } else {
+      insertKey = '_right';
+    }
+    if (!current[insertKey]) {
+      current[insertKey] = new exports.Node(value, null, null, current);
+    } else {
+      this.insert(value, current[insertKey]);
+    }
+  };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
